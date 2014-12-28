@@ -87,8 +87,8 @@ Rocket.prototype.explode = function() {
 	for (var i=0; i<this.submunitions; i++) {
 		var r = new Rocket();
 		r.submunitions = 0;
-		r.bodyMass = (this.bodyMass / this.submunitions) * 0.2;
-		r.fuel = (this.bodyMass / this.submunitions) * 0.8;
+		r.bodyMass = (this.bodyMass / 80) * 0.2;
+		r.fuel = (this.bodyMass / 80) * 0.8;
 		r.fuse = 100;
 		r.delayFuse = this.submunitionDelayFuse;
 		r.color = this.color.slice();
@@ -100,6 +100,8 @@ Rocket.prototype.explode = function() {
 	}
 
 };
+
+var IsMobile = /mobile/i.test(navigator.userAgent);
 
 var rocketCounter = 0;
 var tick = function() {
@@ -116,6 +118,10 @@ var tick = function() {
 			var r = new Rocket();
 			//r.position.x = (Math.random()-0.5) * 80;
 			//r.visible = false;
+			if (IsMobile) {
+				r.submunitions = 20;
+				r.fuel *= 0.7;
+			}
 			r.fuse = 10 + Math.random()*80 | 0;
 			r.submunitionDelayFuse = 0; 
 			r.orientation = (Math.random() - 0.5)*0.25 - Math.PI/2;
