@@ -1,8 +1,8 @@
 var canvas = document.createElement('canvas');
 document.body.appendChild(canvas);
 window.onresize = function() {
-	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight;
+	canvas.width = document.body.clientWidth * (window.devicePixelRatio || 1);
+	canvas.height = document.body.clientHeight * (window.devicePixelRatio || 1);
 };
 window.onresize();
 
@@ -112,10 +112,9 @@ var tick = function() {
 	{
 		ctx.translate(canvas.width/2, canvas.height);
 		ctx.scale(2,2);
-		if (rocketCounter % 30 === 0) {
+		if (rocketCounter % 40 === 0) {
 			var r = new Rocket();
 			//r.position.x = (Math.random()-0.5) * 80;
-			r.fuel += Math.random();
 			//r.visible = false;
 			r.fuse = 10 + Math.random()*80 | 0;
 			r.submunitionDelayFuse = 0; 

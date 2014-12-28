@@ -7,9 +7,21 @@
 		<style>
 			* {
 				margin: 0;
+				padding: 0;
 			}
 			html,body {
 				background: black;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
+			canvas {
+				position: absolute;
+				z-index: 1;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
 			}
 			#play-store {
 				position: absolute;
@@ -23,7 +35,7 @@
 		<script src="fireworks.js"></script>
 		<div id="play-store">
 			<a href="https://play.google.com/store/apps/details?id=net.fhtr.android.livewallpaper.sparklingfireworks" target="_blank">
-			  <img alt="Get it on Google Play" width="96" height="30"
+			  <img alt="Get it on Google Play" width="86" height="30"
 			       src="https://developer.android.com/images/brand/en_generic_rgb_wo_60.png" />
 			</a>
 		</div>
