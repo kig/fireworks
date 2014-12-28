@@ -115,7 +115,7 @@ var tick = function() {
 		if (rocketCounter % 30 === 0) {
 			var r = new Rocket();
 			//r.position.x = (Math.random()-0.5) * 80;
-			r.fuel *= 1.5;
+			r.fuel += Math.random();
 			//r.visible = false;
 			r.fuse = 10 + Math.random()*80 | 0;
 			r.submunitionDelayFuse = 0; 
