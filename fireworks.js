@@ -116,7 +116,7 @@ var tick = function() {
 		ctx.scale(2,2);
 		if (rocketCounter % 40 === 0) {
 			var r = new Rocket();
-			//r.position.x = (Math.random()-0.5) * 80;
+			r.position.x = (Math.floor(Math.random() * 5) - 2) * (canvas.width / 20);
 			//r.visible = false;
 			if (IsMobile) {
 				r.submunitions = 20;
@@ -124,7 +124,7 @@ var tick = function() {
 			}
 			r.fuse = 10 + Math.random()*80 | 0;
 			r.submunitionDelayFuse = 0; 
-			r.orientation = (Math.random() - 0.5)*0.25 - Math.PI/2;
+			r.orientation = (Math.random() - 0.5)*0.15 - Math.PI/2;
 		}
 		rocketCounter++;
 		for (var i=0; i<rockets.length; i++) {
