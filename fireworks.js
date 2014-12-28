@@ -1,8 +1,8 @@
 var canvas = document.createElement('canvas');
 document.body.appendChild(canvas);
 window.onresize = function() {
-	canvas.width = document.body.clientWidth * (window.devicePixelRatio || 1);
-	canvas.height = document.body.clientHeight * (window.devicePixelRatio || 1);
+	canvas.width = document.body.clientWidth;
+	canvas.height = document.body.clientHeight;
 };
 window.onresize();
 
