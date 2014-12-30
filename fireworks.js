@@ -79,6 +79,7 @@ Rocket.prototype.draw = function(ctx) {
 		var speed = Math.sqrt(this.velocity.x * this.velocity.x + this.velocity.y * this.velocity.y);
 		ctx.moveTo(speed,0);
 		ctx.lineTo(0,0);
+		ctx.scale(1, this.color[3]);
 		ctx.stroke();
 	}
 	ctx.restore();
@@ -114,7 +115,7 @@ var tick = function() {
 	{
 		ctx.translate(canvas.width/2, canvas.height);
 		ctx.scale(2,2);
-		if (rocketCounter % 40 === 0) {
+		if (rocketCounter % (IsMobile ? 50 : 30) === 0) {
 			var r = new Rocket();
 			r.position.x = (Math.floor(Math.random() * 5) - 2) * (canvas.width / 20);
 			//r.visible = false;
